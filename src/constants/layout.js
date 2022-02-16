@@ -6,7 +6,6 @@ export const WIDTHS = {
   xl: "xl",
 };
 
-export const ORDER_TYPES = {
-  ascending: "asc",
-  descending: "desc",
+export const GRID_SPACING = {
+  normal: 4,
 };

@@ -1,15 +1,19 @@
 import Localbase from "localbase";
+import { v4 as uuidv4 } from "uuid";
 
-import { ORDER_TYPES } from "../../constants/layout";
+import { ORDER_TYPES } from "../../constants/indexDB";
 
 class API {
-  constructor(baseName) {
+  constructor(baseName = "trello") {
     this.db = new Localbase(baseName);
     this.db.config.debug = true;
   }
 
   async createDocument(collectionName, document) {
-    return await this.db.collection(collectionName).add(document);
+    const key = uuidv4();
+    return await this.db
+      .collection(collectionName)
+      .add({ id: key, ...document }, key);
   }
 
   async getDocument(collectionName, documentId) {

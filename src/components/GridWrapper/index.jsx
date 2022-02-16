@@ -4,16 +4,16 @@ import PropTypes from "prop-types";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
-import { WIDTHS } from "../constants/layout";
+import { GRID_SPACING, WIDTHS } from "../../constants/layout";
 
 const GridWrapper = ({
   items,
   className,
   maxWidth = WIDTHS.md,
-  gridSpacing = 4,
+  gridSpacing = GRID_SPACING.normal,
   gridItemWidths = {},
 }) => (
-  <Container maxWidth={maxWidth} classes={className}>
+  <Container maxWidth={maxWidth} className={className}>
     <Grid container wrap="wrap" spacing={gridSpacing}>
       {items &&
         items.map(({ id, Component }, index) => (

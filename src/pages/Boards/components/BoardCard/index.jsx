@@ -5,9 +5,9 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 
-const BoardCard = ({ title, description = "asdasdsd", color }) => {
+const BoardCard = ({ title, description = "", color }) => {
   return (
-    <Card raised>
+    <Card className="boardCard">
       <CardContent>
         <Typography variant="h6" gutterBottom component="h6">
           {title}
