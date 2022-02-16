@@ -1,7 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "./index.css";
-import App from "./App";
+import { StylesProvider } from "@mui/styles";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import Routers from "./Routers";
+
+import "./index.css";
+
+ReactDOM.render(
+  <StylesProvider injectFirst>
+    <Routers />
+  </StylesProvider>,
+  document.getElementById("root")
+);
